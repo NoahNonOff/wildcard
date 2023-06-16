@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:13:37 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/15 23:33:59 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/06/16 09:02:33 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,6 @@ int	modified_twild(t_wild *inf, int i)
 	if (inf->sep[i] > 0)
 		return (0);
 	return (0);
-}
-
-t_wild	wild_struct_init(int *sep, int sep_size, char **pattern, char *str)
-{
-	t_wild	ret;
-
-	ret.sep = sep;
-	ret.sep_size = sep_size;
-	ret.pattern = pattern;
-	ret.str = str;
-	ret.wild = 0;
-	return (ret);
 }
 
 int	comp(const char *s1, const char *s2)

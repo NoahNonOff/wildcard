@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:39:27 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/15 22:52:57 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/06/16 09:03:03 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,13 @@ DIR		*init_dir_code(char *directory, int *code, int layer, char **cmd);
 int		tdtab_len(char **tab);
 char	*sub_string(char *str, int start, int end);
 int		modified_twild(t_wild *inf, int i);
-t_wild	wild_struct_init(int *sep, int sep_size, char **pattern, char *str);
 int		comp(const char *s1, const char *s2);
 
 /* ======== wildcard_check ======== */
 int		wildcard_check(char *str, char *cmp);
 int		find_pattern(int idx, char *str, char *pattern);
-int		check_pattern(t_wild inf, int i, int idx);
-int		check_end_pattern(t_wild inf, int i, int idx);
+int		check_pattern(t_wild *inf, int i, int idx);
+int		check_end_pattern(t_wild *inf, int i, int idx);
 int		check_pattern_sp(int *sep, char *str);
 
 /* ============ utils ============= */
