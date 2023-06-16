@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:41:19 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/16 09:12:57 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:54:13 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ int	wildcard_check(char *str, char *cmp)
 	if (!inf.sep)
 		return (exit_wildcard(inf.pattern, NULL, -1));
 	if (!ft_strlen(inf.pattern[0]))
+	{
 		if (check_pattern_sp(inf.sep, cmp))
 			return (exit_wildcard(inf.pattern, inf.sep, 1));
+		return (exit_wildcard(inf.pattern, inf.sep, 0));
+	}
 	if (check_pattern(&inf, 0, 0))
 		ret = 1;
 	return (exit_wildcard(inf.pattern, inf.sep, ret));
@@ -102,8 +105,12 @@ int	check_pattern_sp(int *sep, char *str)
 		wild = 1;
 		sep[0] *= -1;
 	}
-	if (!wild && ft_strlen(str) != sep[0])
+	if (!wild)
+	{
+		if (ft_strlen(str) == sep[0])
+			return (1);
 		return (0);
+	}
 	if (wild && ft_strlen(str) < sep[0])
 		return (0);
 	return (1);
