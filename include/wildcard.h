@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:39:27 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/16 09:03:03 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/06/17 10:51:41 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	**wildcard(char *str);
 char	**extract_pattern(char *str, char **ret);
 char	**wild_recursive(char *directory, char **ret, char **cmd, int layer);
 void	add_dir(char **list, int idx, char *dir);
+char	**sort_tab(char **tab);
 
 /* ======== wildcard_ext ======== */
 char	**list_file(DIR *dirp, int code);
@@ -62,6 +63,7 @@ int		ft_strlen(char *str);
 void	*free_tab(char **tab);
 char	*ft_strdup(const char *s);
 char	**tdtab_push(char **tab, char *to_add);
+char	*to_lower(char *str, char *ret);
 
 char	**ft_split(char const *s, char c);
 

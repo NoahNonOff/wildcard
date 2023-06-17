@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:41:19 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/16 14:54:51 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/06/17 10:49:51 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,40 @@ char	**wildcard(char *str)
 	cmd = ft_split(str, '/');
 	if (!cmd)
 		return (NULL);
+	if (!cmd[0])
+		return (NULL);
 	if (str && str[0] == '/')
 		ret = wild_recursive("/", ret, cmd, 0);
 	else
 		ret = wild_recursive(".", ret, cmd, 0);
 	free_tab(cmd);
+	ret = sort_tab(ret);
 	return (ret);
+}
+
+char	**sort_tab(char **tab)
+{
+	int		i;
+	int		j;
+	char	s1[256];
+	char	s2[256];
+	char	*tmp;
+
+	i = -1;
+	while (tab[++i])
+	{
+		j = -1;
+		while (tab[++j + 1])
+		{
+			if (comp(to_lower(tab[i], s1), to_lower(tab[j], s2)) < 0)
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+		}
+	}
+	return (tab);
 }
 
 char	**extract_pattern(char *str, char **ret)
@@ -36,7 +64,7 @@ char	**extract_pattern(char *str, char **ret)
 	char	*to_add;
 
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		while (str[i] && (str[i] == '*' || str[i] == '?'))
 			i++;

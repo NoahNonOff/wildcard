@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 22:44:05 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/15 22:50:37 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/06/17 10:52:26 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,21 @@ char	**tdtab_push(char **tab, char *to_add)
 	ret[len] = NULL;
 	if (tab)
 		free_tab(tab);
+	return (ret);
+}
+
+char	*to_lower(char *str, char *ret)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && i < 256)
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			ret[i] = str[i] + 32;
+		else
+			ret[i] = str[i];
+		i++;
+	}
 	return (ret);
 }
