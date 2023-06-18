@@ -38,3 +38,4 @@ And return an array of string (NULL terminated) of the name of all files witch m
 * `make test` &nbsp;&nbsp; --> &nbsp;&nbsp;compile the C file test.c to test the function into "*test*"
 * `make clean` &nbsp;&nbsp; --> &nbsp;&nbsp;delete .o files
 * `make fclean` &nbsp;&nbsp; --> &nbsp;&nbsp;delete .o files, the library and test
+<br><br>Date: 18 Jun 2023
