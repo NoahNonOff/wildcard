@@ -24,7 +24,7 @@ The result is sort alphabeticly
 Da/ Dtest/  test.c
 ~> echo D*/*
 Da/alpha  Da/beta Da/gamma  Dtest/ba  Dtest/bb  Dtest/bc
-~>echo D*/??
+~> echo D*/??
 Dtest/ba  Dtest/bb  Dtest/bc
 ```
 Prototype of wildcard
