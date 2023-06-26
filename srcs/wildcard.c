@@ -41,6 +41,7 @@ char	**sort_tab(char **tab)
 	char	*tmp;
 
 	i = -1;
+	tab_init(s1, s2);
 	while (tab[++i])
 	{
 		j = -1;

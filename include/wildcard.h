@@ -46,6 +46,7 @@ int		exit_wildcard(char **pattern, int *sep, int ret);
 DIR		*init_dir_code(char *directory, int *code, int layer, char **cmd);
 
 /* ======== wildcard_utils ======== */
+void	tab_init(char *s1, char *s2);
 int		tdtab_len(char **tab);
 char	*sub_string(char *str, int start, int end);
 int		modified_twild(t_wild *inf, int i);

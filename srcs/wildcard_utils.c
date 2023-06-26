@@ -12,6 +12,18 @@
 
 #include "wildcard.h"
 
+void	tab_init(char *s1, char *s2)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 255)
+	{
+		s1[i] = 0;
+		s2[i] = 0;
+	}
+}
+
 int	tdtab_len(char **tab)
 {
 	int	i;

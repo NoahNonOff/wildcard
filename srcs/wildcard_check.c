@@ -59,7 +59,7 @@ int	check_pattern(t_wild *inf, int i, int idx)
 {
 	if (i > inf->sep_size)
 		return (0);
-	while (inf->str[idx] && inf->pattern[i] && i < inf->sep_size)
+	while (i < inf->sep_size && inf->pattern[i] && inf->str[idx])
 	{
 		inf->wild = modified_twild(inf, i);
 		idx += inf->sep[i];
