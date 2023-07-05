@@ -6,7 +6,7 @@
 /*   By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:41:19 by nbeaufil          #+#    #+#             */
-/*   Updated: 2023/06/17 10:49:51 by nbeaufil         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:40:18 by nbeaufil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	**wildcard(char *str)
 	char	**cmd;
 
 	ret = NULL;
+	if (!str || !ft_strlen(str))
+		return (NULL);
 	cmd = ft_split(str, '/');
 	if (!cmd)
 		return (NULL);
@@ -42,7 +44,7 @@ char	**sort_tab(char **tab)
 
 	i = -1;
 	tab_init(s1, s2);
-	while (tab[++i])
+	while (tab && tab[++i])
 	{
 		j = -1;
 		while (tab[++j + 1])
