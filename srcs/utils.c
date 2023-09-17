@@ -72,7 +72,7 @@ char	**tdtab_push(char **tab, char *to_add)
 	len = 0;
 	while (tab && tab[len])
 	{
-		ret[len] = ft_strdup(tab[len]);
+		ret[len] = tab[len];
 		if (!ret[len++])
 			return (free_tab(ret));
 	}
@@ -81,7 +81,7 @@ char	**tdtab_push(char **tab, char *to_add)
 		return (free_tab(ret));
 	ret[len] = NULL;
 	if (tab)
-		free_tab(tab);
+		free(tab);
 	return (ret);
 }
 
